@@ -36,12 +36,17 @@ function ContextProvider(props){
         dispatch({type:"DELETE", payload:id});
     }
 
+    const resetCartItems = () => {
+        dispatch({type:'RESET'})
+    }
+
     const contextData = {
         itemsArr : state.items,
         totalQnty : state.TotalCartQnty,
         incrementCount : IncreCounter,
         decrementCount : DecreCounter,
-        removeItem : deleteItem
+        removeItem : deleteItem,
+        resetAllItems : resetCartItems
     }
 
 

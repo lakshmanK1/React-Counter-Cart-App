@@ -28,7 +28,7 @@ function Counter() {
         <BsCart3 style={CartIcon}/>
         <HOne>{cntxStore.totalQnty}</HOne>
         </div>
-        <ResetBtn><GrPowerReset style={ResetIcon}/>RESET</ResetBtn>
+        <ResetBtn onClick={()=>{cntxStore.resetAllItems()}}><GrPowerReset style={ResetIcon}/>RESET</ResetBtn>
         {
             cntxStore.itemsArr.map((data)=>{
                 return( 

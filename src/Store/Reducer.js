@@ -48,4 +48,13 @@ export default function reducer(state, action){
         },0);
         return {...state, TotalCartQnty:updatedCount };
     }
+
+    if(action.type === "RESET"){
+        let resetData = state.items.map((data)=>{
+            let resetQnty = data.qnty;
+                resetQnty = 0;
+            return {...data, qnty:resetQnty};
+        });
+        return {...state, items:resetData};
+    }
 }
